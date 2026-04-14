@@ -197,7 +197,7 @@ if "Executive Overview" in page:
             if "progress" in str(v): return"color:#f59e0b"
             if "standard" in str(v): return"color:#3b82f6;font-weight:bold"
             return""
-        st.dataframe(df_r.style.applymap(_cu,subset=["Uplift"]),use_container_width=True,hide_index=True)
+        st.dataframe(df_r.style.map(_cu,subset=["Uplift"]),use_container_width=True,hide_index=True)
         st.markdown("<br>",unsafe_allow_html=True)
         slbl("The Four-Step PIE Cycle")
         steps=[("1️⃣","DIAGNOSE","Structured brainstorm with operators. Rank top 5–10 loss drivers."),
