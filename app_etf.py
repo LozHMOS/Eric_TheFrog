@@ -1,6 +1,3 @@
-
-### 3. `app.py`
-```python
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
@@ -153,7 +150,6 @@ elif page == "Live Takt Planner":
     st.header("Live Takt Planner (15-minute intervals)")
     st.markdown("Visual weekly plan showing expected metres, maintenance windows and process work.")
     
-    # Simple demo table
     dates = pd.date_range(datetime.now(), periods=7, freq="D")
     takt = pd.DataFrame({
         "Shift": ["A/S", "N/S"] * 7,
