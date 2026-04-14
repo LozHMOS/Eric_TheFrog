@@ -337,7 +337,8 @@ elif "Golden Meter Builder" in page:
         for i,(lb,dv,st_) in enumerate(zip(slbls,svals,starts)):
             figB.add_trace(go.Bar(y=["Sequence"],x=[dv],base=st_,name=lb,orientation="h",marker_color=cols_s[i%len(cols_s)],text=f"{dv:.1f}'",textposition="inside",insidetextanchor="middle",hovertemplate=f"<b>{lb}</b><br>{dv:.1f} min<extra></extra>"))
         figB.add_vline(x=15,line_dash="dash",line_color=GREEN,annotation_text="15 min target",annotation_position="top right")
-        figB.update_layout(**PLOT_BASE,barmode="stack",height=180,showlegend=False,xaxis_title="Minutes",yaxis=dict(showticklabels=False))
+        figB.update_layout(**PLOT_BASE, barmode="stack", height=180, showlegend=False, xaxis_title="Minutes")
+        figB.update_yaxes(showticklabels=False)
         st.plotly_chart(figB,use_container_width=True)
         slbl("Pattern Benchmark Comparison")
         st.dataframe(pd.DataFrame({"Bolting Pattern":["6-bolt green","8-bolt green","8-bolt + mega-bolt"],"Cycle (min/m)":[13.5,15.0,21.0],"Rate (m/hr)":[4.4,4.0,2.9],"Proj. m/shift":[42,38,28],"14-shift total (m)":[235,220,180],"Condition":["Green roof","Green roof","High clay"]}),use_container_width=True,hide_index=True)
